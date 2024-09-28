@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
+<body>
+    
+    <!-- navbar -->
+    <div class="flex items-center justify-around w-full h-20 px-8 bg-white">
+        <div class="flex h-[100%] items-center gap-4">
+            <img src="./img/Logo.png" alt="Bed" class="h-[3rem]">
+            <span class="text-[#0067fa] text-2xl font-extrabold">Medicare</span>
+        </div>
+        <div class="flex items-center gap-10">
+            <span><a href="../index.html" class="text-base font-medium">Home</a></span>
+            <span><a href="#" class="text-base font-medium">About Us</a></span>
+            <span><a href="#" class="text-base font-medium">Help</a></span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span><a href="../patient/signup.html" class="text-white bg-[#0067fa] text-xl font-semibold px-5 py-[0.5rem] rounded-2xl border-2 border-[#0067fa]">Log out</a></span>
+        </div>
+    </div>
+
+     <!-- outer div -->
+     
+     <div class="bg-[#f7f8fd]"> 
+
+        <!-- inner div -->
+
+        <div class="flex flex-col items-center justify-center ">
+            <!-- card -->
+            
+            <p class="flex items-center ml-[-25rem] mt-9 pb-2">Medi Card</p>
+            
+
+            <div class="bg-gradient-to-r from-[#0041A0] to-[#85A0C7] h-[30 rem] w-[35rem] p-4 rounded-lg shadow-lg flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <!-- Profile Icon -->
+                  <img src="./img/profilelogo.png" alt="Profile Image" class="object-cover w-16 h-16 bg-gray-300 rounded-full" />
+              
+                  <div class="flex flex-col gap-3">
+                    <div>
+                    
+                        <!-- Name -->
+                     <p class="text-white">Name</p>
+                     <p id="profile-name"  class="font-semibold text-white">John Doe</p>
+
+                    </div>
+                    <div>
+                    
+                        <!-- Contact Info -->
+                     <p class="text-white ">Conatct Info</p>
+                     <p id="profile-contact" class="text-gray-300">+91 XXX-XXX-XXXX</p>
+                    </div>
+                    <div>
+                    
+                        <!-- Medi ID -->
+                    <p class="text-white">MEDI ID</p>
+                    <p class="text-gray-300" id="medi_id">XXXXXXXXXXXXXXX</p>
+                    </div>
+                    
+                    
+                  </div>
+                </div>
+              
+                <div class="text-right">
+                  <!-- Bed Status -->
+                  <p class="font-semibold text-white">Bed Status</p>
+                  <div class="flex space-x-2">
+                    <span class="font-bold text-green-400">Active</span>
+                    <span class="font-bold text-red-600">Not Active</span>
+                    <span class="font-bold text-black">Pending</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- div form -->
+              <div>
+                <p class="flex items-center -ml-[0rem] mt-20">Book A Bed</p>
+                <div class="container p-4 mx-auto">
+                    <div class="p-6 bg-white rounded-lg shadow-md">
+                        <h2 class="mb-4 text-2xl font-bold">Hospital Booking Form</h2>
+                
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block mb-2 text-gray-700">Select Hospital:</label>
+                                <select class="block w-full px-3 py-2 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded-lg appearance-none focus:outline-none focus:bg-white focus:border-blue-500">
+                                    <option value="">Select Hospital</option>
+                                    <option value="Hospital A">Bhaktisiddhanta Hospital</option>
+                                    <option value="Hospital B">Morya Hospital</option>
+                                    <option value="Hospital C">Chellaram Hospital - Diabetes Care & Multispecialty</option>
+                                    <option value="Hospital D">Sahyadri Super Speciality Hospital - Deccan</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block mb-2 text-gray-700">Select Bed Type:</label>
+                                <select class="block w-full px-3 py-2 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded-lg appearance-none focus:outline-none focus:bg-white focus:border-blue-500" id="bedtype" onchange="bedtypechange()">
+                                    <option value="">Select Department</option>
+                                    <option value="ICU">ICU</option>
+                                    <option value="General">General</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block mb-2 text-gray-700">Select Department:</label>
+                                <select class="block w-full px-3 py-2 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded-lg appearance-none focus:outline-none focus:bg-white focus:border-blue-500" id="dept" onchange="deptchange()">
+                                    <option value="">Select Department</option>
+                                    <option value="Emergency">Accident or Emergency</option>
+                                    <option value="Operation">Operation</option>
+                                </select>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block mb-2 text-gray-700">Date:</label>
+                                    <input type="date" class="block w-full px-3 py-2 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded-lg appearance-none focus:outline-none focus:bg-white focus:border-blue-500" id="dateselect" onchange="datechange()">
+                                </div>
+                                <div>
+                                    <label class="block mb-2 text-gray-700">Time:</label>
+                                    <input type="time" class="block w-full px-3 py-2 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded-lg appearance-none focus:outline-none focus:bg-white focus:border-blue-500">
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="flex justify-center mt-4">
+                            <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-700" onclick="makereq()">Make Request</button>
+                        </div>
+                    </div>
+                </div>
+           
+              </div>
+
+
+
+              
+        </div>
+        <div class="container p-4 mx-auto">
+            <div class="flex justify-center">
+                <div class="flex flex-col items-center p-4 mr-4 bg-blue-500 rounded-lg">
+                    <img src="./img/Logo.png" alt="General Bed" class="w-16 h-16">
+                    <h3 class="font-bold text-white">General Bed</h3>
+                    <p class="font-semibold text-white" id="generalbeds">6</p>
+                </div>
+                <hr class="mx-4 bg-red-700" />
+                <div class="flex flex-col items-center p-4 bg-orange-400 rounded-lg">
+                    <img src="./img/Logo.png" alt="Emergency Bed" class="w-16 h-16">
+                    <h3 class="font-bold text-white">Emergency Bed</h3>
+                    <p class="font-semibold text-white" id="emergencybeds">5</p>
+                </div>
+            </div>
+        </div>
+
+     </div>
+
+     <footer>
+        <footer class="flex  justify-between  items-center mx-32 text-[#3971ea] my-16">
+            <div class="that-text-inFooter">
+                
+                <div class="flex flex-col gap-8">
+                    <h3 class="text-lg font-semibold">MediCare</h3>
+                    <div class="">
+                    <a class="font-semibold">Follow Us</a>
+                        <div class="text-3xl font-bold cursor-pointer footer-icons">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <!-- <i class="fa-brands fa-spotify"></i> -->
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+    
+    
+            <div class="flex gap-24 footer-more-information">
+                
+                <div class="flex flex-col gap-4 font-semibold ">Company
+                    <ul class="font-normal border-0">
+                        <li ><span class="hover:border-b-2">About us</span></li>
+                        <li ><span class="hover:border-b-2">Privacy Policy</span></li>
+                        <li ><span class="hover:border-b-2">Terms of use</span></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-4 font-semibold">Community
+                    <ul class="font-normal">
+                        <li><span class="hover:border-b-[rgba(27, 97, 110, 0.8)] hover:border-b-2">Specialist</span></li>
+                        <li><span class="hover:border-b-2">Patient</span></li>
+                        <li><span class="hover:border-b-2">Blog</span></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-4 font-semibold">Help
+                    <ul class="font-normal">
+                        <li><span class="hover:border-b-2">Support</span></li>
+                        <li><span class="hover:border-b-2">FAQ</span></li>
+                        <li><span class="hover:border-b-2">Mobile App</span></li>
+                    </ul>
+                </div>
+    
+            </div>
+            
+        </footer>
+    </footer>
+
+
+
+</body>
+<script src="app.js"></script>
+</html>

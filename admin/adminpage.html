@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<!-- <link rel="stylesheet" href="./style.css"> -->
+<body>
+    <div class="flex items-center justify-around w-full h-20 px-8 bg-white">
+        <div class="flex h-[100%] items-center gap-4">
+            <img src="./img/Logo.png" alt="Bed" class="h-[3rem]">
+            <span class="text-[#0067fa] text-2xl font-extrabold">Medicare</span>
+        </div>
+        <div class="flex items-center gap-10">
+            <span><a href="../index.html" class="text-base font-medium">Home</a></span>
+            <span><a href="#" class="text-base font-medium">About Us</a></span>
+            <span><a href="#" class="text-base font-medium">Help</a></span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span><a href="../patient/signup.html" class="text-white bg-[#0067fa] text-xl font-semibold px-5 py-[0.5rem] rounded-2xl border-2 border-[#0067fa]">Log out</a></span>
+        </div>
+    </div>
+    
+    <main class="container p-4 mx-auto my-8 bg-white rounded-lg shadow-lg">
+        <!-- User Bed Requests -->
+        <section>
+          <h2 class="mb-4 text-xl font-semibold">User Bed Requests</h2>
+          <table class="min-w-full bg-white table-auto">
+            <thead>
+              <tr class="bg-gray-200">
+                <th class="px-4 py-2">User Name</th>
+                <th class="px-4 py-2">Bed Type</th>
+                <th class="px-4 py-2">Request Date</th>
+                <th class="px-4 py-2">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-4 py-2 border" id="username">John Doe</td>
+                <td class="px-4 py-2 border" id="bedtype">Emergency</td>
+                <td class="px-4 py-2 border" id="datebook">25/09/2024</td>
+                <td class="px-4 py-2 border">
+                  <button class="px-3 py-1 mr-2 text-white bg-green-500 rounded" onclick="acceptRequest(this)" >Accept</button>
+                  <button class="px-3 py-1 text-white bg-red-500 rounded" onclick="denyRequest(this)">Deny</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+    
+        <!-- Bed Availability Management -->
+        <section class="mt-8">
+          <h2 class="mb-4 text-xl font-semibold">Manage Bed Availability</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <!-- Emergency Beds -->
+            <div class="flex items-center">
+              <label for="emergencyBeds" class="block mr-4 font-medium">Emergency Beds:</label>
+              <input id="emergencyBeds" type="number" value="15" class="w-24 px-3 py-2 border border-gray-300 rounded">
+            </div>
+            <!-- General Beds -->
+            <div class="flex items-center">
+              <label for="generalBeds" class="block mr-4 font-medium">General Beds:</label>
+              <input id="generalBeds" type="number" value="30" class="w-24 px-3 py-2 border border-gray-300 rounded" oncha>
+            </div>
+          </div>
+          <button onclick="saveBedChanges()" class="px-4 py-2 mt-4 text-white bg-blue-600 rounded">
+            Save Changes
+          </button>
+        </section>
+      </main>
+
+      <script>
+        const generalBeds = document.getElementById('generalBeds'); 
+        const emergencyBeds = document.getElementById('emergencyBeds');
+        const name = document.getElementById('username');
+        const bedType = document.getElementById('bedtype');
+        const dateBook = document.getElementById('datebook');
+
+        name.innerText = localStorage.getItem('name');
+        bedType.innerText = localStorage.getItem('Bedtype');
+        dateBook.innerText = localStorage.getItem('Date');
+        
+        function acceptRequest(button) {
+          localStorage.setItem("status", "Accept")
+          const row = button.closest('tr');
+          const userName = row.cells[0].innerText;
+          alert(userName + "'s request accepted!");
+          row.remove(); // remove row after accepting
+        }
+
+        const generalbeds = () => {
+          localStorage.setItem('generalbeds', generalBeds.value);
+        }
+        const emergencybeds = () => {
+          localStorage.setItem('emergencybeds', emergencyBeds.value);
+        }
+    
+        function denyRequest(button) {
+          localStorage.setItem("status", "Denied");
+          const row = button.closest('tr');
+          const userName = row.cells[0].innerText;
+          alert(userName + "'s request denied!");
+          row.remove(); // remove row after denying
+        }
+    
+        function saveBedChanges() {
+          const emergencyBeds = document.getElementById('emergencyBeds').value;
+          const generalBeds = document.getElementById('generalBeds').value;
+          alert("Emergency Beds: " + emergencyBeds + "\nGeneral Beds: " + generalBeds + "\nChanges saved!");
+          generalbeds();
+          emergencybeds();
+        }
+      </script>
+</body>
+</html>

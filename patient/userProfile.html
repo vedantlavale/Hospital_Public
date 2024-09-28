@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
+<body class="p-0 m-0">
+    
+    <!-- navbar -->
+    <div class="flex items-center justify-around w-full h-20 px-8 bg-white">
+        <div class="flex h-[100%] items-center gap-4">
+            <img src="./img/Logo.png" alt="Bed" class="h-[3rem]">
+            <span class="text-[#0067fa] text-2xl font-extrabold">Medicare</span>
+        </div>
+        <div class="flex items-center gap-10">
+            <span><a href="../index.html" class="text-base font-medium">Home</a></span>
+            <span><a href="#" class="text-base font-medium">About Us</a></span>
+            <span><a href="#" class="text-base font-medium">Help</a></span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span><a href="../patient/signup.html" class="text-white bg-[#0067fa] text-xl font-semibold px-5 py-[0.5rem] rounded-2xl border-2 border-[#0067fa]">Log out</a></span>
+        </div>
+    </div>
+
+     <!-- outer div -->
+     
+     <div class="bg-[#f7f8fd]"> 
+
+        <!-- inner div -->
+
+        <div class="flex flex-col items-center justify-center">
+            <!-- card -->
+            
+            <p class="flex items-center ml-[-25rem] mt-9 pb-2">Medi Card</p>
+            
+
+            <div class="bg-gradient-to-r from-[#0041A0] to-[#85A0C7] h-[30 rem] w-[35rem] p-4 rounded-lg shadow-lg flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <!-- Profile Icon -->
+                  <img src="./img/profilelogo.png" alt="Profile Image" class="object-cover w-16 h-16 bg-gray-300 rounded-full" />
+              
+                  <div class="flex flex-col gap-3">
+                    <div>
+                    
+                        <!-- Name -->
+                     <p class="text-white">Name</p>
+                     <p id="profile-name"  class="font-semibold text-white">John Doe</p>
+
+                    </div>
+                    <div>
+                    
+                        <!-- Contact Info -->
+                     <p class="text-white ">Conatct Info</p>
+                     <p id="profile-contact" class="text-gray-300">+91 XXX-XXX-XXXX</p>
+                    </div>
+                    <div>
+                    
+                        <!-- Medi ID -->
+                    <p class="text-white">MEDI ID</p>
+                    <p class="text-gray-300" id="medi_id1">XXXXXXXXXXXXXXX</p>
+                    </div>
+                    
+                    
+                  </div>
+                </div>
+              
+                <div class="text-right">
+                  <!-- Bed Status -->
+                  <p class="font-semibold text-white">Bed Status</p>
+                  <div class="flex space-x-2">
+                    <span class="font-bold text-green-400">Active</span>
+                    <span class="font-bold text-red-600">Not Active</span>
+                    <span class="font-bold text-gray-500">Pending</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- div form -->
+              <div>
+                
+                <div class="container mx-auto mt-8">
+                    <div class="bg-[#EAF2FF] rounded-lg shadow-md p-6">
+                        <form action="">
+                            <h2 class="text-2xl font-bold ">Patient Information</h2>
+                            <p class="my-4 text-sm text-red-600">*Please enter valid information</p>
+                
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                            <div>
+                                <label class="block mb-2 text-gray-700">Name:</label>
+                                <input id="input-name" type="text" class="block w-full px-3 py-2 leading-tight text-gray-700 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:bg-white focus:border-blue-500" placeholder="Enter your name">
+                            </div>
+                            <div>
+                                <label class="block mb-2 text-gray-700">Blood Group:</label>
+                                <input type="text" class="block w-full px-3 py-2 leading-tight text-gray-700 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:bg-white focus:border-blue-500" placeholder="Enter your blood group">
+                            </div>
+                            <div>
+                                <label class="block mb-2 text-gray-700">Age:</label>
+                                <input type="text" class="block w-full px-3 py-2 leading-tight text-gray-700 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:bg-white focus:border-blue-500" placeholder="Enter your age">
+                            </div>
+                            <div>
+                                <label class="block mb-2 text-gray-700">Chronic Disease (if any):</label>
+                                <input type="text" class="block w-full px-3 py-2 leading-tight text-gray-700 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:bg-white focus:border-blue-500" placeholder="Enter any chronic diseases">
+                            </div>
+                            <div>
+                                <label class="block mb-2 text-gray-700">Sex:</label>
+                                <select class="block w-full px-3 py-2 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded-lg appearance-none focus:outline-none focus:bg-white focus:border-blue-500">
+                                    <option value="">Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="gender">other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block mb-2 text-gray-700">Conatct Info:</label>
+                                <input id="input-contact" type="text" class="block w-full px-3 py-2 leading-tight text-gray-700 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:bg-white focus:border-blue-500" placeholder="Enter your contact info">
+                            </div>
+                        </div>
+                        </form>
+                        
+                
+                        <div class="flex justify-end mt-4">
+                            <button type="button" id="update-btn" class="px-4 py-2 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-700">Update Profile</button>
+
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <!-- book a bed button -->
+              
+              <div class="flex items-center justify-center my-9">
+                <hr class="mx-4" />
+                <button class="bg-[#002D8D] text-white px-4 py-2 rounded-md" id="submit-btn"><a href="./bookbed.html">Book A Bed</a></button>
+                <hr class="mx-4" />
+            </div>
+
+              
+        </div>
+
+     </div>
+
+     <footer>
+        <footer class="flex  justify-between  items-center mx-32 text-[#3971ea] my-16">
+            <div class="that-text-inFooter">
+                
+                <div class="flex flex-col gap-8">
+                    <h3 class="text-lg font-semibold">MediCare</h3>
+                    <div class="">
+                    <a class="font-semibold">Follow Us</a>
+                        <div class="text-3xl font-bold cursor-pointer footer-icons">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <!-- <i class="fa-brands fa-spotify"></i> -->
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+    
+    
+            <div class="flex gap-24 footer-more-information">
+                
+                <div class="flex flex-col gap-4 font-semibold ">Company
+                    <ul class="font-normal border-0">
+                        <li ><span class="hover:border-b-2">About us</span></li>
+                        <li ><span class="hover:border-b-2">Privacy Policy</span></li>
+                        <li ><span class="hover:border-b-2">Terms of use</span></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-4 font-semibold">Community
+                    <ul class="font-normal">
+                        <li><span class="hover:border-b-[rgba(27, 97, 110, 0.8)] hover:border-b-2">Specialist</span></li>
+                        <li><span class="hover:border-b-2">Patient</span></li>
+                        <li><span class="hover:border-b-2">Blog</span></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-4 font-semibold">Help
+                    <ul class="font-normal">
+                        <li><span class="hover:border-b-2">Support</span></li>
+                        <li><span class="hover:border-b-2">FAQ</span></li>
+                        <li><span class="hover:border-b-2">Mobile App</span></li>
+                    </ul>
+                </div>
+    
+            </div>
+            
+        </footer>
+    </footer>
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
